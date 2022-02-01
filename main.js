@@ -46,3 +46,23 @@ document.getElementById('chapter').innerHTML = document.getElementById('text').i
 console.log(getComputedStyle(document.getElementById('text')).color);
 
 document.getElementById('text').style.color = 'red';
+
+//////////////////////////////////////////////////////////////////////////
+
+const welcoming = document.getElementById('chapter');
+
+welcoming.innerHTML = 'Hey everybody!';
+welcoming.style.color = 'yellow';
+
+
+const select = (id) => {
+    return document.getElementById(id);
+}
+
+select('text').innerHTML = '<h2>Our function works insane!</h2><h2>Test</h2>';
+select('text').style.cssText = 'color: yellow; font-size: 50px';
+select('text').style.color = 'white';
+
+document.querySelector('#text>h2').style.fontSize = '20px';
+
+console.log(document.querySelectorAll('#text>h2'));
