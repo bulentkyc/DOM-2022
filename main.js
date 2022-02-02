@@ -61,8 +61,23 @@ const select = (id) => {
 
 select('text').innerHTML = '<h2>Our function works insane!</h2><h2>Test</h2>';
 select('text').style.cssText = 'color: yellow; font-size: 50px';
-select('text').style.color = 'white';
+select('chapter').style.color = 'white';
 
 document.querySelector('#text>h2').style.fontSize = '20px';
 
 console.log(document.querySelectorAll('#text>h2'));
+
+const mySelector = (selector) => {
+    const items = document.querySelectorAll(selector);
+    console.log(items);
+
+    if (items.length == 1) {
+        return items[0];
+    } else {
+        return items;
+    }
+}
+
+mySelector('#text').style.color = 'coral'
+
+console.log(mySelector('#text>h2')[1].style);
