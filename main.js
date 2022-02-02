@@ -106,3 +106,14 @@ console.log(myFirstElement);
 
 $('#second').appendChild(myFirstElement);
 
+$('#second').append('Essence');
+
+$('#second').insertAdjacentHTML('beforebegin', '<section><h1>Done!</h1></section>');
+
+//////////////////////////////////////////////////////////
+$('section').appendChild(myFirstElement);
+
+const newItem = '<h1>New Item</h1>';
+
+$('#second').insertAdjacentHTML('beforebegin', newItem);
+$('section').insertAdjacentHTML('beforebegin', newItem);
