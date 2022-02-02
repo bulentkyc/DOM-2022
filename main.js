@@ -67,7 +67,7 @@ document.querySelector('#text>h2').style.fontSize = '20px';
 
 console.log(document.querySelectorAll('#text>h2'));
 
-const mySelector = (selector) => {
+const $ = (selector) => {
     const items = document.querySelectorAll(selector);
     console.log(items);
 
@@ -77,7 +77,32 @@ const mySelector = (selector) => {
         return items;
     }
 }
+////////////////// element.classList //////////////////
+$('#text').style.color = 'coral'
 
-mySelector('#text').style.color = 'coral'
+console.log($('#text>h2')[1].style);
 
-console.log(mySelector('#text>h2')[1].style);
+const h2 = $('#second > h2');
+
+h2.classList.add('lg-text');
+h2.classList.add('carlos');
+
+console.log(h2.classList);
+
+h2.classList.remove('red-text');
+
+console.log(h2.classList);
+
+////////////////// document.createElement() /////////////////
+//syntax: let element = document.createElement(tagName[, options]);
+
+const myFirstElement = document.createElement('article');
+myFirstElement.innerText = `Hey there! I'm your newest article`;
+
+console.log(myFirstElement);
+
+////////////////// element.appendChild() /////////////////
+//syntax: appendChild(aChild);
+
+$('#second').appendChild(myFirstElement);
+
