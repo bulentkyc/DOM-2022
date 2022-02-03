@@ -59,7 +59,7 @@ const select = (id) => {
     return document.getElementById(id);
 }
 
-select('text').innerHTML = '<h2>Our function works insane!</h2><h2>Test</h2>';
+select('text').innerHTML = '<h2>Our function works insane!</h2><h2 class="red-text">Test</h2>';
 select('text').style.cssText = 'color: yellow; font-size: 50px';
 select('chapter').style.color = 'white';
 
@@ -117,3 +117,47 @@ const newItem = '<h1>New Item</h1>';
 
 $('#second').insertAdjacentHTML('beforebegin', newItem);
 $('section').insertAdjacentHTML('beforebegin', newItem);
+
+//////////////////////////////////////////////////////////
+// Elemnts and Nodes
+
+//Node: The generic name of any type of objects in the DOM tree
+
+//Elemnts: Basicly all HTML elements
+
+//////////////////////////////////////////////////////////
+//Syntax: node.cloneNode(deep)
+let test = $('#text > h2')[1].cloneNode(true); 
+//false is the default parameter value
+
+$('#text').appendChild(test);
+
+//////////////////////////////////////////////////////////
+//Walking through the DOM
+
+//node.childNodes()
+
+console.log($(`#second`).childNodes);
+
+//element.children()
+console.log($(`#second`).children);
+
+//DOM collections are live
+//DOM collections are read-only
+//Don’t use for..in to loop over collections
+
+$('#target')
+.previousElementSibling
+.previousElementSibling
+.style
+.backgroundColor = 'navy';
+
+$('#target')
+.parentElement
+.style
+.backgroundColor = 'tomato';
+
+const main = $('main');
+
+console.log(document.querySelectorAll('div'));
+console.log(main.querySelectorAll('div'));
